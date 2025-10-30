@@ -1,14 +1,18 @@
 services:
   - type: web
-    name: site-frontend
+    name: fewminutespaper-frontend
     env: static
-    buildCommand: "npm install && npm run build"
+    buildCommand: "cd client && npm install && npm run build"
     staticPublishPath: client/build
     envVars:
       - key: NODE_VERSION
         value: 18
+
   - type: web
-    name: site-backend
+    name: fewminutespaper-backend
     env: node
     buildCommand: "cd server && npm install"
     startCommand: "cd server && npm start"
+    envVars:
+      - key: NODE_VERSION
+        value: 18
