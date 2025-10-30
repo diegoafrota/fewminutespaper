@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: fewminutespaper
+    env: static
+    staticPublishPath: .
+    buildCommand: ""

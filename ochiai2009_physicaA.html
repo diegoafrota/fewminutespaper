@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resumo: On the construction of complex networks with optimal Tsallis entropy</title>
+
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Markdown + KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #111827;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== Barra de progresso ===== */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: black;
+      width: 0%;
+      z-index: 2000;
+      transition: width 0.3s ease-in-out;
+    }
+
+    header {
+      position: fixed;
+      top: 4px;
+      width: 100%;
+      background-color: #111827;
+      color: white;
+      padding: 1rem 1.5rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 7rem auto 3rem;
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .content h1, .content h2, .content h3 {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      color: #111827;
+      font-weight: 700;
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .content h1 {
+      font-size: 1.8rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.4rem;
+    }
+
+    .content h2 {
+      font-size: 1.4rem;
+      margin-top: 1.5rem;
+    }
+
+    #meta-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #6b7280;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    #meta-info p {
+      margin: 0;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 2rem 0;
+    }
+
+    .pix {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .pix img {
+      width: 180px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+
+  <header>
+    <a href="index.html">← Back</a>
+    <h1 style="font-size:1.2rem;">Few Minutes Paper</h1>
+    <div></div>
+  </header>
+
+  <div class="content">
+    <div id="meta-info">
+      <p id="reading-time"></p>
+      <p id="view-count"></p>
+    </div>
+    <div id="markdown-content"></div>
+
+    <div class="pix">
+      <p>Support the project, donate by PIX</p>
+      <img src="fewminutespaper_pix.png" alt="QR Code PIX">
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Few Minutes Paper — For a Curious Mind.
+  </footer>
+
+  <!-- Markdown -->
+  <script type="text/markdown" id="markdown-source">
+## On the construction of complex networks with optimal Tsallis entropy
+
+---
+
+## Autores
+- **Primeiro autor:** T. Ochiai  
+- **Último autor:** J.C. Nacher  
+
+---
+
+## Abstract
+1. **Contexto do tema** — O trabalho formula a entropia de Tsallis no contexto de redes complexas e busca topologias que a maximizem.  
+2. **Lacuna (gap)** — Faltavam modelos que, além de gerarem distribuições em lei de potência, também maximizassem a entropia de Tsallis e conectassem claramente o parâmetro $q$ à dinâmica de crescimento.  
+3. **Propósito** — Propor construções de rede cujo grau obedeça exatamente à distribuição que maximiza a entropia de Tsallis e interpretar o parâmetro $q$ no contexto de redes.  
+4. **Metodologia** — Dois modelos de crescimento: (i) $C-R$ (cópia + anexação aleatória) e (ii) $P-R$ (anexação preferencial + aleatória). São derivadas equações mestras e soluções analíticas para $P(k)$.  
+5. **Principais resultados** — No $C-R$, a distribuição de graus coincide exatamente com a forma $q$-exponencial que maximiza Tsallis; no $P-R$, $P(k)$ também pode ser escrito em forma $q$-exponencial com identificação adequada de $q$ e $K$.  
+6. **Conclusões** — Cópia e anexação preferencial são mecanismos-chave para redes com **entropia de Tsallis máxima**; $q$ pode ser interpretado como razão entre processos de cópia e anexação aleatória $\(\alpha=q-1\)$.  
+
+---
+
+## Introdução
+- **Contexto:** Redes reais exibem universalidades, frequentemente com distribuições de grau em lei de potência (redes “scale-free”).  
+- **Necessidade:** A mecânica estatística de Boltzmann–Gibbs não descreve bem sistemas com interações de longo alcance; surge a **estatística não extensiva** e a entropia de **Tsallis**. Entretanto, a conexão sistemática entre não extensividade e teoria de redes ainda era pouco explorada.  
+- **Tarefa:** Formular a entropia de Tsallis para redes e construir modelos de crescimento ($C-R$ e $P-R$) que reproduzam a distribuição ótima prevista.  
+- **Objetivo:** Demonstrar analiticamente que os modelos propostos geram $P(k)$ na forma $q$-exponencial que **maximiza** a entropia de Tsallis e discutir o significado de $q$.  
+
+---
+
+## Resultados
+- **Otimização exata no $C-R$:** O grau segue **precisamente** a distribuição que maximiza $S_q$ quando $q=1+\alpha$ e $m_0=1$.  
+- **Forma $q$-exponencial no $P-R$:** Mesmo sem cópia explícita, a mistura “preferencial+aleatória” leva a um $P(k)$ $q$-exponencial.  
+- **Interpretação do $q$:** Em redes, $q$ mede o desvio da aleatoriedade; $q=1$ → rede aleatória (cauda exponencial), $1 < q < 2$ → presença de cópia/heterogeneidade que induz caudas pesadas.  
+
+---
+
+## Conclusão
+- **Desfecho principal:** O modelo $C-R$ gera exatamente a distribuição que maximiza a entropia de Tsallis; o $P-R$ também reproduz $q$-exponenciais.  
+- **Nível de abstração:** Conecta uma **lei variacional** (maximização de $S_q$) com **regras de crescimento** de rede, dando interpretação operacional a $q$.  
+- **Perspectivas futuras:** Mapear parâmetros $\(q, K\)$ em redes reais e aprofundar o vínculo entre não-extensividade e topologias empíricas.  
+
+---
+
+> Ochiai, T., Nacher, J.C. *On the construction of complex networks with optimal Tsallis entropy*, Physica A, 2009.
+  </script>
+
+  <script>
+    // === Renderiza Markdown ===
+    const markdown = document.getElementById('markdown-source').textContent;
+    const contentEl = document.getElementById('markdown-content');
+    contentEl.innerHTML = marked.parse(markdown);
+
+    // === Calcula tempo de leitura ===
+    const words = markdown.split(/\s+/).length;
+    const minutes = Math.ceil(words / 200);
+    document.getElementById('reading-time').textContent = `🕒 Tempo estimado de leitura: ${minutes} min`;
+
+    // === Renderiza fórmulas KaTeX (corrigido e completo) ===
+    setTimeout(() => {
+      renderMathInElement(contentEl, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ],
+        throwOnError: false
+      });
+    }, 100);
+
+    // === Barra de progresso ===
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      progressBar.style.width = `${scrolled}%`;
+    });
+
+    // === Contador de visitas via CountAPI ===
+    fetch('https://api.countapi.xyz/hit/fewminutespaper/ochiai2009')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('view-count').textContent = `👁️ ${data.value} visualizações`;
+      })
+      .catch(() => {
+        document.getElementById('view-count').textContent = `👁️ 0 visualizações`;
+      });
+  </script>
+</body>
+</html>
